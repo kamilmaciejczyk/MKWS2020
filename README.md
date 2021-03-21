@@ -2,7 +2,7 @@
 
 Topic: "Analysis of the adiabatic temperature and the temperature with constant volume in hydrogen air mixture combustion with different initial conditions" 
 
-Considered inistial conditions:
+Considered initial conditions:
 - concentration
 - temperature
 - pressure
