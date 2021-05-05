@@ -14,7 +14,3 @@ tempForDifferentInitTemp("SV", P0)
 for phi in Phi: tempForPhi(phi, "HP")
 
 for phi in Phi: tempForPhi(phi, "SV")
-
-
-
-#plt.show()
