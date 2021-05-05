@@ -25,7 +25,6 @@ tad4 = np.zeros(npoints)
 tad = [tad05, tad1, tad2, tad3, tad4] 
 
 
-
 def tempForDifferentPressures(equlibrium, T0):
     P = np.linspace(0.1*ct.one_atm, ct.one_atm*5, npoints)
 
@@ -51,7 +50,6 @@ def tempForDifferentPressures(equlibrium, T0):
     plt.savefig('plots/temp_for_diff_press_for_' + equlibrium)
 
     return plt 
-
 
 
 def tempForDifferentInitTemp(equlibrium, P0):
@@ -98,20 +96,13 @@ def tempForPhi(phi, equilibrium):
             gas.equilibrate(equilibrium)
             temp[j][i] = gas.T
 
-    # Make data.
-
-    # Plot the surface.
     surf = ax.plot_surface(P / 100000, T, temp, cmap=cm.coolwarm,
                         linewidth=0, antialiased=False)
 
-    # Customize the z axis.
-    #ax.set_zlim(-1.01, 1.01)
     ax.zaxis.set_major_locator(LinearLocator(10))
-    # A StrMethodFormatter is used automatically
     ax.zaxis.set_major_formatter('{x:.0f}')
     ax.set(ylabel = 'Initial temperature [K]', xlabel = "Initial pressure [bar]")
 
-    # Add a color bar which maps values to colors.
     fig.colorbar(surf, shrink=0.5, aspect=5)
 
     label = 'Adiabatic flame temperature [K]' if equilibrium == "HP" else 'Const. volume flame temperature [K]'
